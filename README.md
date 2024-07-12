@@ -180,7 +180,7 @@ api-server-java
 
 ### Python 모듈 구조도
 
-![Python_API_모듈_분석.png](images%2FPython_API_%EB%AA%A8%EB%93%88_%EB%B6%84%EC%84%9D.png)
+![Python_API_모듈_분석.png](documents%2Fimages%2FPython_API_%EB%AA%A8%EB%93%88_%EB%B6%84%EC%84%9D.png)
 
 ### Java 전환 방향성 및 개발 범위
 
@@ -207,7 +207,7 @@ api-server-java
 
 * 개발 방식 구조도
 
-![Java_서버_개발_구조도.png](images%2FJava_%EC%84%9C%EB%B2%84_%EA%B0%9C%EB%B0%9C_%EA%B5%AC%EC%A1%B0%EB%8F%84.png)
+![Java_서버_개발_구조도.png](documents%2Fimages%2FJava_%EC%84%9C%EB%B2%84_%EA%B0%9C%EB%B0%9C_%EA%B5%AC%EC%A1%B0%EB%8F%84.png)
 
 ## 아키텍처 설계
 
@@ -215,23 +215,23 @@ api-server-java
 
 [[로봇서비스 API 고도화] 01 Java API 모듈 구조도.pdf](documents%2F02%20%EC%84%A4%EA%B3%84%2F%5B%EB%A1%9C%EB%B4%87%EC%84%9C%EB%B9%84%EC%8A%A4%20API%20%EA%B3%A0%EB%8F%84%ED%99%94%5D%2001%20Java%20API%20%EB%AA%A8%EB%93%88%20%EA%B5%AC%EC%A1%B0%EB%8F%84.pdf)
 
-![Java_API_모듈_분석.png](images%2FJava_API_%EB%AA%A8%EB%93%88_%EB%B6%84%EC%84%9D.png)
+![Java_API_모듈_분석.png](documents%2Fimages%2FJava_API_%EB%AA%A8%EB%93%88_%EB%B6%84%EC%84%9D.png)
 
 ### 데이터 플로우 다이어그램
 
 [[로봇서비스 API 고도화] 02 데이터 플로우 다이어그램.pdf](documents%2F02%20%EC%84%A4%EA%B3%84%2F%5B%EB%A1%9C%EB%B4%87%EC%84%9C%EB%B9%84%EC%8A%A4%20API%20%EA%B3%A0%EB%8F%84%ED%99%94%5D%2002%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%94%8C%EB%A1%9C%EC%9A%B0%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8.pdf)
 
-![DataFlow_Diagram.png](images%2FDataFlow_Diagram.png)
+![DataFlow_Diagram.png](documents%2Fimages%2FDataFlow_Diagram.png)
 
 ## 화면 설계
 
 [[로봇서비스 API 고도화] 04 FE-화면설계-와이어프레임.pdf](documents%2F02%20%EC%84%A4%EA%B3%84%2F%5B%EB%A1%9C%EB%B4%87%EC%84%9C%EB%B9%84%EC%8A%A4%20API%20%EA%B3%A0%EB%8F%84%ED%99%94%5D%2004%20FE-%ED%99%94%EB%A9%B4%EC%84%A4%EA%B3%84-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84.pdf)
 
-![화면_설계_01.png](images%2F%ED%99%94%EB%A9%B4_%EC%84%A4%EA%B3%84_01.png)
+![화면_설계_01.png](documents%2Fimages%2F%ED%99%94%EB%A9%B4_%EC%84%A4%EA%B3%84_01.png)
 
-![화면_설계_02.png](images%2F%ED%99%94%EB%A9%B4_%EC%84%A4%EA%B3%84_02.png)
+![화면_설계_02.png](documents%2Fimages%2F%ED%99%94%EB%A9%B4_%EC%84%A4%EA%B3%84_02.png)
 
-![화면_설계_03.png](images%2F%ED%99%94%EB%A9%B4_%EC%84%A4%EA%B3%84_03.png)
+![화면_설계_03.png](documents%2Fimages%2F%ED%99%94%EB%A9%B4_%EC%84%A4%EA%B3%84_03.png)
 
 ## 데이터베이스 설계
 
@@ -247,10 +247,10 @@ api-server-java
 
 [[로봇서비스 API 고도화] 02 테스트 시나리오 기반 통합테스트 결과서.pdf](documents%2F04%20%ED%85%8C%EC%8A%A4%ED%8A%B8%2F%5B%EB%A1%9C%EB%B4%87%EC%84%9C%EB%B9%84%EC%8A%A4%20API%20%EA%B3%A0%EB%8F%84%ED%99%94%5D%2002%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%20%EA%B8%B0%EB%B0%98%20%ED%86%B5%ED%95%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B2%B0%EA%B3%BC%EC%84%9C.pdf)
 
-![Integration_Test_Coverage.png](images%2FIntegration_Test_Coverage.png)
+![Integration_Test_Coverage.png](documents%2Fimages%2FIntegration_Test_Coverage.png)
 
 ### 단위테스트
 
 비즈니스 로직이 존재하는 `Service`, `Utils`, `Entity` 계층에 메서드 단위의 테스트 코드 작성
 
-![Unit_Test_Coverage.png](images%2FUnit_Test_Coverage.png)
+![Unit_Test_Coverage.png](documents%2Fimages%2FUnit_Test_Coverage.png)
