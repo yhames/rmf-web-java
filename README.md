@@ -6,6 +6,7 @@
       - [Mockup 노드 기능](#mockup-노드-기능)
     - [팀원](#팀원)
     - [사용기술](#사용기술)
+    - [Git Branch 전략](#git-branch-전략)
     - [프로젝트 구조](#프로젝트-구조)
   - [요구사항](#요구사항)
     - [Python 모듈 구조도](#python-모듈-구조도)
@@ -57,8 +58,8 @@ python3 src/mock_server/mock_server/websocket_client.py
 
 ### 팀원
 
-| 정승철 @middlefitting | 김예건 @dawnpoems | 박정우 @yhames |
-|--------------------|----------------|-------------|
+| 정승철<br>@middlefitting | 김예건<br>@dawnpoems | 박정우<br>@yhames |
+|:--------------------:|:----------------:|:-------------:|
 
 ↗️ [업무분담 및 개인별 진행사황](documents%2F%EA%B0%9C%EC%9D%B8%EB%B3%84%20%EC%A7%84%ED%96%89%EC%83%81%ED%99%A9.md)
 
@@ -69,6 +70,21 @@ python3 src/mock_server/mock_server/websocket_client.py
 `WebSocket` `Socket.io` `ReactiveX`
 
 `Python` `Typescript`  `React`
+
+### Git Branch 전략
+
+* `branch`는 `main`, `dev`, `feature`로 구분합니다.
+* `issue` 및 `branch` 생성
+  * `WBS` 작업 목록을 `milestone`으로 등록
+  * `issue` 생성하고 `milestone`과 연결된 상세 내용 및 담당자 설정
+  * 생성된 `issue`에서 `branch` 생성
+  * `branch` `issue`에서 자동으로 생성되는 것을 사용
+* `feature` 작업시 [Conventional Commit](https://www.conventionalcommits.org/ko/v1.0.0/) 적용
+* 작업 완료된 `feature`는 `dev`로 `pull request`
+  * `main`, `dev`에는 `push` 지양
+* `merge`
+  * `squash merge` 사용
+  * `commit message`는 `#<issue 번호>-<issue 제목> (#<pr 번호>)` 형식 준수
 
 ### 프로젝트 구조
 
