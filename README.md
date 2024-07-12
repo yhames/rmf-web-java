@@ -205,6 +205,10 @@ api-server-java
 | (ROS Mocking) | RMF Core와 연결된 기능의 Mocking으로 ROS 의존성 제거                   |
 |   (사용자 관리)    | 사용자 추가 및 정보 변경 기능 개발                                     |
 
+* 개발 방식 구조도
+
+![Java_서버_개발_구조도.png](images%2FJava_%EC%84%9C%EB%B2%84_%EA%B0%9C%EB%B0%9C_%EA%B5%AC%EC%A1%B0%EB%8F%84.png)
+
 ## 아키텍처 설계
 
 ### Java API 모듈 구조도
