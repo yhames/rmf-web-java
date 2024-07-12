@@ -1,0 +1,34 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: rmf-api-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+        - name: LoggingFilter
+          args:
+            baseMessage: Logging Filter
+            preLogger: true
+            postLogger: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: 'http://localhost:3000'
+            allow-credentials: true
+            allowedHeaders: '*'
+            allowedMethods: '*'
+      routes:
+        - id: socket-io-api
+          uri: ws://localhost:8081
+          predicates:
+            - Path=/ws/**
+        - id: sio-api
+          uri: http://localhost:8081
+          predicates:
+            - Path=/socket.io**
+        - id: rest-api
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**

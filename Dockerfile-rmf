@@ -1,0 +1,46 @@
+ARG BASE_IMAGE=ghcr.io/open-rmf/rmf/rmf_demos
+FROM $BASE_IMAGE
+
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
+  apt-get update && apt-get install -y \
+    nodejs \
+    jq \
+    ros-humble-rmw-cyclonedds-cpp \
+    curl \
+    vim \
+  && pip3 install pipenv \
+  && pip3 install aiomysql
+
+ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+RUN echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /root/.bashrc
+
+ENV NVM_DIR=/root/.nvm
+ENV NODE_VERSION=16
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash \
+   && . $NVM_DIR/nvm.sh \
+   && echo "-k" > ~/.curlrc \
+   && nvm install $NODE_VERSION \
+   && nvm alias default $NODE_VERSION \
+   && nvm use default \
+   && npm config set unsafe-perm \
+   && npm config set strict-ssl false
+
+ENV PNPM_HOME=/root/.local/share/pnpm
+RUN curl -fsSL https://get.pnpm.io/install.sh | bash - \
+  && export PATH="$PNPM_HOME:$PATH" \
+  && pnpm env use --global 16
+RUN apt update && apt install -y python3-venv
+
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /root/.bashrc
+RUN echo "source /rmf_demos_ws/install/setup.bash" >> /root/.bashrc
+
+WORKDIR /
+# RUN git clone https://github.com/open-rmf/rmf-web.git
+COPY ./rmf-web /rmf-web
+WORKDIR /rmf-web
+RUN export PATH="$PNPM_HOME:$PATH" && pnpm install
+
+EXPOSE 3000
+
+WORKDIR /rmf-web/packages/dashboard
+# CMD ["pnpm", "start:mysql"]

@@ -1,0 +1,10 @@
+FROM openjdk:17-alpine
+ARG JAR_FILE=/rmf-api-gateway/build/libs/rmf-api-gateway-0.0.1-SNAPSHOT.jar
+
+COPY ./rmf-api-gateway /rmf-api-gateway
+WORKDIR /rmf-api-gateway
+
+RUN ./gradlew clean build -x test \
+    && cp ${JAR_FILE} app.jar
+
+ENTRYPOINT ["java","-jar","app.jar"]

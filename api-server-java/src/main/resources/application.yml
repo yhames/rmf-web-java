@@ -1,0 +1,67 @@
+# Server
+server:
+  port: 8080
+spring:
+  profiles:
+    active: main
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rmf_db?reWriteBatchedInserts=true&charSet=UTF-8
+    #      url: jdbc:postgresql://localhost:5432/rmf_db?reWriteBatchedInserts=true&serverTimezone=Asia/Seoul&charEncoding=UTF-8
+    username: root
+    password: root
+
+# JPA
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: validate
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          batch_size: 1000
+          order_inserts: true
+          order_updates: true
+          batch_versioned_data: true
+  jwt:
+    secret: sadasmpasddfoimmas2178ey219robotserviceasdioasiodi2210e12j922123213
+    accessExpiredMs: 3600000
+    refreshExpiredMs: 86400000
+    accessTokenName: Authorization
+    refreshTokenName: RefreshToken
+    sessionExpiredMs: 1800000
+
+
+# Logging
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+    org.hibernate.type.descriptor.sql: debug
+    org.hibernate.orm.jdbc: trace
+
+# Socket.io
+socketio:
+  server:
+    hostname: localhost
+    port: 8081
+
+# Cookie
+cookie:
+  secure: false
+
+# Swagger
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json

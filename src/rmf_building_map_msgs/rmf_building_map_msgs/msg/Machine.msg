@@ -1,0 +1,19 @@
+string name
+
+float32 v1_x
+float32 v1_y
+
+float32 v2_x
+float32 v2_y
+
+uint8 door_type
+uint8 MACHINE_TYPE_UNDEFINED=0
+uint8 MACHINE_TYPE_SINGLE_SLIDING=1
+uint8 MACHINE_TYPE_DOUBLE_SLIDING=2
+uint8 MACHINE_TYPE_SINGLE_TELESCOPE=3
+uint8 MACHINE_TYPE_DOUBLE_TELESCOPE=4
+uint8 MACHINE_TYPE_SINGLE_SWING=5
+uint8 MACHINE_TYPE_DOUBLE_SWING=6
+
+float32 motion_range
+int32 motion_direction

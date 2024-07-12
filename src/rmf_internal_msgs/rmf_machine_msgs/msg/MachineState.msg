@@ -1,0 +1,4 @@
+builtin_interfaces/Time machine_time
+string machine_name
+MachineMode current_mode
+int32 current_value

@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  mock-server:
+    network_mode: 'host'
+    image: innovation-mock-ros:test
+    build:
+      context: .
+      dockerfile: Dockerfile-ros
+    container_name: innovation-mock-server
+    command: sleep infinity
+    volumes:
+      - ./src:/root/workspace/src:rw
+
+  rmf-web:
+    network_mode: 'host'
+    image: innovation-rmf-web:test
+    build:
+      context: .
+      dockerfile: Dockerfile-rmf
+    container_name: innovation-rmf-web
+    command: sleep infinity
+    depends_on:
+      - java-server
+
+  java-server:
+    network_mode: 'host'
+    build:
+      context: .
+      dockerfile: Dockerfile-java
+    container_name: innovation-java-server
+    restart: always
+    depends_on:
+      - gateway-server
+
+  gateway-server:
+    network_mode: 'host'
+    build:
+      context: .
+      dockerfile: Dockerfile-gateway
+    container_name: innovation-gateway-server
+    restart: always
+    depends_on:
+      - postgres
+
+  postgres:
+    network_mode: "host"
+    image: postgres:latest
+    container_name: innovation-postgres
+    volumes:
+      - ./.postgres:/var/lib/postgresql/data
+      - ./database:/docker-entrypoint-initdb.d
+    restart: always
+    environment:
+      POSTGRES_DB: rmf_db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
