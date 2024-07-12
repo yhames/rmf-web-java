@@ -1,0 +1,4 @@
+*.pyc
+.idea/
+.mysql/
+.DS_Store
