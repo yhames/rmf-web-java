@@ -65,11 +65,9 @@ python3 src/mock_server/mock_server/websocket_client.py
 
 ### 사용기술
 
-`Java` `Spring` `ROS` `MySQL` `Docker`
-
-`WebSocket` `Socket.io` `ReactiveX`
-
-`Python` `Typescript`  `React`
+> `Java` `Spring` `ROS` `MySQL` `Docker`  
+> `WebSocket` `Socket.io` `ReactiveX`  
+> `Python` `Typescript`  `React`
 
 ### Git Branch 전략
 
