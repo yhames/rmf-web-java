@@ -247,6 +247,6 @@ api-server-java
 
 ### 단위테스트
 
-비즈니스 로직이 존재하는 Service, Utils, Entity 계층에 메서드 단위의 테스트 코드 작성
+비즈니스 로직이 존재하는 `Service`, `Utils`, `Entity` 계층에 메서드 단위의 테스트 코드 작성
 
 ![Unit_Test_Coverage.png](images%2FUnit_Test_Coverage.png)
